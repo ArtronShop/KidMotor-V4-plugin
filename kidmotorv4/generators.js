@@ -120,8 +120,8 @@ Blockly.JavaScript['kidmotor_get_distance'] = function(block) {
 	var dropdown_pin_trig = block.getFieldValue('pin_trig');
   var dropdown_pin_echo = block.getFieldValue('pin_echo');
 
-	var code = `${KIDMOTOR_BEGIN}.getDistance(${dropdown_pin_trig}, ${dropdown_pin_echo});\n`;
-	return code;
+	var code = `${KIDMOTOR_BEGIN}.getDistance(${dropdown_pin_trig}, ${dropdown_pin_echo})`;
+	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 

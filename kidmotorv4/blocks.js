@@ -370,11 +370,8 @@ Blockly.Blocks['kidmotor_analog_read'] = {
 				"type": "field_dropdown",
 				"name": "pin",
 				"options": [
-					[ "D1", "1" ],
-					[ "D2", "2" ],
-					[ "D3", "3" ],
-					[ "D4", "4" ],
-					[ "D5", "5" ],
+					[ "A0", "4" ],
+					[ "A1", "5" ],
 				]
 			}],
 			"output": [
