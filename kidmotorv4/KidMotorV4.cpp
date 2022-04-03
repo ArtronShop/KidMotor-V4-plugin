@@ -1,7 +1,7 @@
 #include "KidMotorV4.h"
 
 /*
-  DEV By IOXhop : www.ioxhop.com
+  DEV By ArtronShop : www.artronshop.co.th
   Sonthaya Nongnuch : fb.me/maxthai
 */
 
@@ -155,34 +155,36 @@ int KidMotorV4::getADC(uint8_t ch) {
 }
 
 void KidMotorV4::setPWM(uint8_t ch, uint16_t val) {
+	ch = ch - 1;
 	this->setMode(ch, MODE_OUTPUT);
 
 	uint8_t data[] = {
-		0x10 + (ch * 2), 
-		val >> 8,
-		val & 0xFF
+		(uint8_t)(0x10 + (ch * 2)), 
+		(uint8_t)(val >> 8),
+		(uint8_t)(val & 0xFF)
 	};
 
 	this->error = this->i2c->write(this->channel, this->address, data, 3) ==  ESP_OK;
 }
 
 void KidMotorV4::servoAngle(uint8_t ch, uint8_t angle) {
-	this->setMode(ch, MODE_OUTPUT);
+	ch = ch - 1;
 
 	uint8_t data[] = {
-		0x20 + (ch - 1), 
-		val,
+		(uint8_t)(0x20 + ch), 
+		angle,
 	};
 
 	this->error = this->i2c->write(this->channel, this->address, data, 2) ==  ESP_OK;
 }
 
 void KidMotorV4::servoUnlock(uint8_t ch) {
-	this->error = this->servoAngle(255);
+	this->servoAngle(ch, 255);
 }
 
 int KidMotorV4::getDistance(uint8_t trig_ch, uint8_t echo_ch) {
-	ch = ch - 1;
+	trig_ch = trig_ch - 1;
+	echo_ch = echo_ch - 1;
 	uint8_t data[2];
 	uint8_t buff[2];
 
