@@ -224,6 +224,72 @@ Blockly.Blocks["kidmotor_motor"] = {
 	}
 };
 
+Blockly.Blocks['kidmotor_servo_set_angle'] = {
+	init: function() {
+		this.jsonInit({
+			"type": "kidmotor_servo_set_angle",
+			"message0": Blockly.Msg.KIDMOTOR_SERVO_MESSAGE,
+			"args0": [{
+				"type": "field_dropdown",
+				"name": "pin",
+				"options": [
+					[ "SV1", "1" ],
+					[ "SV2", "2" ],
+					[ "SV3", "3" ],
+				]
+			}, {
+				"type": "input_value",
+				"name": "value",
+				"check": [
+					"Number",
+					"Boolean"
+				]
+			}],
+			"inputsInline": true,
+			"previousStatement": null,
+			"nextStatement": null,
+			"colour": 45,
+			"tooltip": Blockly.Msg.KIDMOTOR_SERVO_TOOLTIP,
+			"helpUrl": "https://www.ioxhop.com/p/851"
+		});
+	},
+	xmlToolbox: function() {
+		return `
+			<block type="kidmotor_servo_set_angle">
+				<value name="value">
+					<shadow type="math_number">
+						<field name="VALUE">90</field>
+					</shadow>
+				</value>
+			</block>
+		`;
+	}
+};
+
+Blockly.Blocks['kidmotor_servo_unlock'] = {
+	init: function() {
+		this.jsonInit({
+			"type": "kidmotor_servo_unlock",
+			"message0": Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_MESSAGE,
+			"args0": [{
+				"type": "field_dropdown",
+				"name": "pin",
+				"options": [
+					[ "SV1", "1" ],
+					[ "SV2", "2" ],
+					[ "SV3", "3" ],
+				]
+			}],
+			"inputsInline": true,
+			"previousStatement": null,
+			"nextStatement": null,
+			"colour": 45,
+			"tooltip": Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_TOOLTIP,
+			"helpUrl": "https://www.ioxhop.com/p/851"
+		});
+	}
+};
+
 Blockly.Blocks['kidmotor_digital_write'] = {
 	init: function() {
 		this.jsonInit({
@@ -312,12 +378,92 @@ Blockly.Blocks['kidmotor_analog_read'] = {
 				]
 			}],
 			"output": [
-				"Number",
-				"Boolean"
+				"Number"
 			],
 			"colour": 45,
 			"tooltip": Blockly.Msg.KIDMOTOR_ANALOG_READ_TOOLTIP,
 			"helpUrl": "https://www.ioxhop.com/p/851"
 		  });
+	}
+};
+
+Blockly.Blocks['kidmotor_pwm_write'] = {
+	init: function() {
+		this.jsonInit({
+			"type": "kidmotor_pwm_write",
+			"message0": Blockly.Msg.KIDMOTOR_PWM_WRITE_MESSAGE,
+			"args0": [{
+				"type": "field_dropdown",
+				"name": "pin",
+				"options": [
+					[ "D1", "1" ],
+					[ "D2", "2" ],
+					[ "D3", "3" ],
+					[ "D4", "4" ],
+					[ "D5", "5" ],
+				]
+			}, {
+				"type": "input_value",
+				"name": "value",
+				"check": [
+					"Number"
+				]
+			}],
+			"inputsInline": true,
+			"previousStatement": null,
+			"nextStatement": null,
+			"colour": 45,
+			"tooltip": Blockly.Msg.KIDMOTOR_PWM_WRITE_TOOLTIP,
+			"helpUrl": "https://www.ioxhop.com/p/851"
+		});
+	},
+	xmlToolbox: function() {
+		return `
+			<block type="kidmotor_pwm_write">
+				<value name="value">
+					<shadow type="math_number">
+						<field name="VALUE">1</field>
+					</shadow>
+				</value>
+			</block>
+		`;
+	}
+};
+
+Blockly.Blocks['kidmotor_get_distance'] = {
+	init: function() {
+		this.jsonInit({
+			"type": "kidmotor_get_distance",
+			"message0": Blockly.Msg.KIDMOTOR_DISTANCE_MESSAGE,
+			"args0": [{
+				"type": "field_dropdown",
+				"name": "pin_trig",
+				"options": [
+					[ "D1", "1" ],
+					[ "D2", "2" ],
+					[ "D3", "3" ],
+					[ "D4", "4" ],
+					[ "D5", "5" ],
+				]
+			},
+			{
+				"type": "field_dropdown",
+				"name": "pin_echo",
+				"options": [
+					[ "D1", "1" ],
+					[ "D2", "2" ],
+					[ "D3", "3" ],
+					[ "D4", "4" ],
+					[ "D5", "5" ],
+				]
+			}],
+			"output": [
+			  "Number",
+			  "Boolean"
+			],
+			"colour": 45,
+			"tooltip": Blockly.Msg.KIDMOTOR_DISTANCE_TOOLTIP,
+			"helpUrl": "https://www.ioxhop.com/p/851"
+		});
 	}
 };

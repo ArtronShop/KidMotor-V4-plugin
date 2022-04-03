@@ -4,13 +4,16 @@ Blockly.Msg.KIDMOTOR_MOTOR_BACKWARD1_MESSAGE = "ทวนเข็มนาฬ�
 Blockly.Msg.KIDMOTOR_MOTOR_TOOLTIP = "เปลี่ยนทิศทางและความเร็วของมอเตอร์ 1 หรือ 2";
 
 Blockly.Msg.KIDMOTOR_DIGITAL_READ_MESSAGE = "อ่านค่าดิจิทัลที่ช่อง %1";
-Blockly.Msg.KIDMOTOR_DIGITAL_READ_TOOLTIP = "อ่านค่าดิจิทัลจากช่องใด ๆ บน KidBright32";
+Blockly.Msg.KIDMOTOR_DIGITAL_READ_TOOLTIP = "อ่านค่าดิจิทัลจากช่องใด ๆ บน KidMotor";
 
 Blockly.Msg.KIDMOTOR_DIGITAL_WRITE_MESSAGE = "เขียนค่าดิจิทัลที่ช่อง %1 เป็น %2";
-Blockly.Msg.KIDMOTOR_DIGITAL_WRITE_TOOLTIP = "เขียนค่าดิจิทัลไปที่ช่องใด ๆ บน KidBright32";
+Blockly.Msg.KIDMOTOR_DIGITAL_WRITE_TOOLTIP = "เขียนค่าดิจิทัลไปที่ช่องใด ๆ บน KidMotor";
 
 Blockly.Msg.KIDMOTOR_ANALOG_READ_MESSAGE = "อ่านค่าแอนะล็อกที่ช่อง %1";
-Blockly.Msg.KIDMOTOR_ANALOG_READ_TOOLTIP = "อ่านค่าแอนะล็อก 0 ถึง 4095 จากช่องใด ๆ บน KidBright32";
+Blockly.Msg.KIDMOTOR_ANALOG_READ_TOOLTIP = "อ่านค่าแอนะล็อก 0 ถึง 4095 จากช่องใด ๆ บน KidMotor";
+
+Blockly.Msg.KIDMOTOR_PWM_WRITE_MESSAGE = "เขียนค่า PWM ช่อง %1 เป็น %2";
+Blockly.Msg.KIDMOTOR_PWM_WRITE_TOOLTIP = "เขียนค่า PWM ไปที่ช่องใด ๆ บน KidMotor";
 
 Blockly.Msg.KIDMOTOR_MOTOR_FORWARD_MESSAGE = "วิ่งไปข้างหน้าด้วยความเร็ว %1 %% เป็นเวลา %2 วินาที";
 Blockly.Msg.KIDMOTOR_MOTOR_FORWARD_TOOLTIP = "";
@@ -36,3 +39,13 @@ Blockly.Msg.KIDMOTOR_MOTOR_WHEEL_TOOLTIP = "";
 
 Blockly.Msg.KIDMOTOR_MOTOR_STOP_MESSAGE = "หยุดวิ่ง";
 Blockly.Msg.KIDMOTOR_MOTOR_STOP_TOOLTIP = "";
+
+Blockly.Msg.KIDMOTOR_SERVO_MESSAGE = "เซอร์โวมอเตอร์ %1 กำหนดองศา %2";
+Blockly.Msg.KIDMOTOR_SERVO_TOOLTIP = "";
+
+Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_MESSAGE = "เซอร์โวมอเตอร์ %1 ปลดล็อก";
+Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_TOOLTIP = "ปลดล็อกเซอร์โวมอเตอร์ขา SV1 - SV3 บน KidMotor";
+
+Blockly.Msg.KIDMOTOR_DISTANCE_MESSAGE = "Ultrasonic ขา trig %1 ขา echo %2 อ่านค่าระยะทาง (เซ็นติเมตร)";
+Blockly.Msg.KIDMOTOR_DISTANCE_TOOLTIP = "";
+

@@ -12,6 +12,9 @@ Blockly.Msg.KIDMOTOR_DIGITAL_WRITE_TOOLTIP = "Write digital value to pin on KidM
 Blockly.Msg.KIDMOTOR_ANALOG_READ_MESSAGE = "analog read pin %1";
 Blockly.Msg.KIDMOTOR_ANALOG_READ_TOOLTIP = "Read analog value 0-4095 from pin on KidMotor";
 
+Blockly.Msg.KIDMOTOR_PWM_WRITE_MESSAGE = "PWM write pin %1 to %2";
+Blockly.Msg.KIDMOTOR_PWM_WRITE_TOOLTIP = "Write PWM signal to pin on KidMotor";
+
 Blockly.Msg.KIDMOTOR_MOTOR_FORWARD_MESSAGE = "move forward at power %1 %% for %2 secs";
 Blockly.Msg.KIDMOTOR_MOTOR_FORWARD_TOOLTIP = "";
 
@@ -36,3 +39,13 @@ Blockly.Msg.KIDMOTOR_MOTOR_WHEEL_TOOLTIP = "";
 
 Blockly.Msg.KIDMOTOR_MOTOR_STOP_MESSAGE = "stop moving";
 Blockly.Msg.KIDMOTOR_MOTOR_STOP_TOOLTIP = "";
+
+Blockly.Msg.KIDMOTOR_SERVO_MESSAGE = "servo pin %1 set angle %2";
+Blockly.Msg.KIDMOTOR_SERVO_TOOLTIP = "set angle of servo on pin SV1 - SV3 on KidMotor";
+
+Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_MESSAGE = "servo pin %1 unlock";
+Blockly.Msg.KIDMOTOR_SERVO_UNLOCK_TOOLTIP = "unlock servo on pin SV1 - SV3 on KidMotor";
+
+Blockly.Msg.KIDMOTOR_DISTANCE_MESSAGE = "Ultrasonic trig pin %1 echo pin %2 get distance (cm)";
+Blockly.Msg.KIDMOTOR_DISTANCE_TOOLTIP = "Get distance from ultrasonic with KidMotor";
+

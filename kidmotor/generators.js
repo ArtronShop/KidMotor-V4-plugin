@@ -1,4 +1,4 @@
-const KIDMOTOR_BEGIN = `DEV_I2C1.KidMotorV3(0, 0x08)`;
+const KIDMOTOR_BEGIN = `DEV_I2C1.KidMotorV4(0, 0x08)`;
 const KIDMOTOR_GEN_SET_MOTOR = (ch, dir, speed) => `${KIDMOTOR_BEGIN}.setMotor(${ch}, ${dir}, ${speed});`;
 const KIDMOTOR_GEN_DELAY = (t) => `vTaskDelay((${t} * 1000) / portTICK_RATE_MS);`;
 const KIDMOTOR_GEN_SET_MOTOR_STOP = () => `${KIDMOTOR_GEN_SET_MOTOR(1, 0, 0)} ${KIDMOTOR_GEN_SET_MOTOR(2, 0, 0)}`;
@@ -92,3 +92,36 @@ Blockly.JavaScript['kidmotor_motor_stop'] = function(block) {
   var code = `${KIDMOTOR_GEN_SET_MOTOR_STOP()}\n`;
   return code;
 };
+
+Blockly.JavaScript['kidmotor_servo_set_angle'] = function(block) {
+	var dropdown_pin = block.getFieldValue('pin');
+  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC) || "0";
+  
+	var code = `${KIDMOTOR_BEGIN}.servoAngle(${dropdown_pin}, ${value_value});\n`;
+	return code;
+};
+
+Blockly.JavaScript['kidmotor_servo_unlock'] = function(block) {
+	var dropdown_pin = block.getFieldValue('pin');
+  
+	var code = `${KIDMOTOR_BEGIN}.servoUnlock(${dropdown_pin});\n`;
+	return code;
+};
+
+Blockly.JavaScript['kidmotor_pwm_write'] = function(block) {
+	var dropdown_pin = block.getFieldValue('pin');
+  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC) || "0";
+  
+	var code = `${KIDMOTOR_BEGIN}.setPWM(${dropdown_pin}, ${value_value});\n`;
+	return code;
+};
+
+Blockly.JavaScript['kidmotor_get_distance'] = function(block) {
+	var dropdown_pin_trig = block.getFieldValue('pin_trig');
+  var dropdown_pin_echo = block.getFieldValue('pin_echo');
+
+	var code = `${KIDMOTOR_BEGIN}.getDistance(${dropdown_pin_trig}, ${dropdown_pin_echo});\n`;
+	return code;
+};
+
+

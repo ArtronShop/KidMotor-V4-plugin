@@ -16,14 +16,14 @@
 #define MODE_INPUT 0
 #define MODE_OUTPUT 1
 
-class KidMotorV3 : public Device {
+class KidMotorV4 : public Device {
 	private:		
 		I2CDev *i2c;
 		uint8_t KidMotorData[2];
 
 	public:
 		// constructor
-		KidMotorV3(int bus_ch, int dev_addr) ;
+		KidMotorV4(int bus_ch, int dev_addr) ;
 		
 		// override
 		void init(void);
@@ -41,6 +41,10 @@ class KidMotorV3 : public Device {
 		void setOutput(uint8_t ch, bool val) ;
 		int getInput(uint8_t ch) ;
 		int getADC(uint8_t ch) ;
+		void setPWM(uint8_t ch, uint16_t val) ;
+		void servoAngle(uint8_t ch, uint8_t angle) ;
+		void servoUnlock(uint8_t ch) ;
+		int getDistance(uint8_t trig_ch, uint8_t echo_ch) ;
 		
 };
 
